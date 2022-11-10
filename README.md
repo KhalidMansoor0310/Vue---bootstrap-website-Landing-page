@@ -1,1 +1,1 @@
-https://papaya-duckanoo-68dcce.netlify.app/ig/).
+https://papaya-duckanoo-68dcce.netlify.app/
