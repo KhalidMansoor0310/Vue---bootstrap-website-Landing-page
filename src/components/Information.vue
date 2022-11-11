@@ -1,100 +1,146 @@
 <template>
   <div class="container-fluid icons-grid py-5">
-    <div class="container">
-      <div class="col-6">
-        <h2 class="ml-2">Hoe bespaart tado°?</h2>
-      </div>
-    </div>
-    <div class="container py-4">
+    <!-- <div class="container py-4"> -->
+    <div class="col-8 m-auto">
+      <h2 class="ml-2 py-2">Hoe bespaart tado°?</h2>
+
       <div class="row">
-        <div
-          class="col-12 col-lg-6 col-md-6"
-          :key="info.id"
-          v-for="info in info"
-        >
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-lg-2 col-md-2 my-2">
-              <img :src="info.source" alt="" />
+        <div class="col-md-6">
+          <div class="row-info my-2">
+            <div class="info__image-div">
+              <img src="../assets/icons/location.png" class="img" alt="" />
             </div>
-            <div class="col-12 col-lg-5 col-md-5">
+            <div class="info__paragraph-div">
               <p>
-                {{ info.text }}
+                Als er niemand thuis is, wordt de verwarming automatisch
+                uitgezet.
               </p>
+            </div>
+          </div>
+          <div class="row-info my-2">
+            <div class="info__image-div">
+              <img src="../assets/icons/window.png" class="img" alt="" />
+            </div>
+            <div class="info__paragraph-div">
+              <p>
+                Als er een raam open staat, wordt de verwarming in de ruimte
+                automatisch uitgezet.
+              </p>
+            </div>
+          </div>
+          <div class="row-info my-2">
+            <div class="info__image-div">
+              <img src="../assets/icons/cloudy.png" class="img" alt="" />
+            </div>
+            <div class="info__paragraph-div">
+              <p>
+                Als de temperatuur buiten stijgt, past de verwarming zich tijdig
+                automatisch aan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row-info my-2">
+            <div class="info__image-div">
+              <img src="../assets/icons/calender.png" class="img" alt="" />
+            </div>
+            <div class="info__paragraph-div">
+              <p>
+                Slimme verwarmingsschema’s die gebruikers zelf kunnen instellen.
+              </p>
+            </div>
+          </div>
+          <div class="row-info my-2">
+            <div class="info__image-div">
+              <img src="../assets/icons/remoteControl.png" class="img" alt="" />
+            </div>
+            <div class="info__paragraph-div">
+              <p>
+                SHandmatige mogelijkheid voor gebruikers om de verwarming
+                tijdelijk uit of lager te zetten.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mt-2">
+              <button class="btn btn-block btn-lg">
+                Ja, ik wil meer informatie
+                <i class="fa-solid fa-arrow-right py-1"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
-
-<script>
-import location from "../assets/icons/location.png";
-import window from "../assets/icons/window.png";
-import cloudy from "../assets/icons/cloudy.png";
-import remoteControl from "../assets/icons/remoteControl.png";
-import calender from "../assets/icons/calender.png";
-
-export default {
-  data: function () {
-    return {
-      info: [
-        {
-          id: 1,
-          text: "Als er niemand thuis is, wordt de verwarming automatisch uitgez",
-          source: location,
-        },
-        {
-          id: 2,
-          text: "Als er een raam open staat, wordt de verwarming in de ruimte au",
-          source: window,
-        },
-        {
-          id: 3,
-          text: "Als de temperatuur buiten stijgt, past de verwarming zich tijdi",
-          source: cloudy,
-        },
-        {
-          id: 4,
-          text: "Slimme verwarmingsschema’s die gebruikers zelf kunnen instellen",
-          source: calender,
-        },
-        {
-          id: 5,
-          text: "Handmatige mogelijkheid voor gebruikers om de verwarming tijdel",
-          source: remoteControl,
-        },
-      ],
-    };
-  },
-};
-</script>
 
 <style scoped>
 .icons-grid {
   background-color: #00b969;
   /* height: 579px; */
   color: white;
+  font-family: Freizeit-Medium;
+}
+@font-face {
+  font-family: Freizeit-Medium;
+  src: url("../assets/fonts/Freizeit/Freizeit-Medium.otf");
 }
 .header {
   background-color: #eee;
 }
-
+.row-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info__image-div {
+  width: 30%;
+}
+.info__paragraph-div {
+  width: 80%;
+  /* border: 1px solid red; */
+}
+.fa-solid {
+  color: #f9a300;
+}
+@media screen and (max-width: 576px) {
+  .info__image-div img {
+    height: 50px;
+    padding: 10px;
+    width: 50px;
+  }
+  .info__paragraph-div {
+    width: 100%;
+    font-size: 12px;
+  }
+  button {
+    border-radius: 27px;
+    background-color: white;
+    font-size: 12px;
+  }
+}
 p {
   color: #ffffff;
-  font-weight: 500;
-  font-family: "Freizeit";
+  /* font-weight: 500; */
+
+  font-family: Freizeit-Medium;
 }
 
 .img {
-  width: 96px;
-  height: 96px;
+  width: 66px;
+  height: 66px;
   border-radius: 48px;
   background-color: #f9a300;
 }
 button {
-  /* width: 400px;
-    height: 53px; */
   border-radius: 27px;
+  background-color: white;
+  width: 100%;
+}
+.info__icon {
+  color: #f9a300;
 }
 </style>

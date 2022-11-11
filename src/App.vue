@@ -1,30 +1,38 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" class="px-5" type="dark" variant="light">
-      <b-navbar-brand
-        ><router-link
-          class="navbar-brand text-dark d-flex justify-content-center align-items-center"
-          aria-current="page"
-          to="/"
-        >
-          <h1>tado°</h1>
-          <span class="logo__powered-text p-2">powered by</span>
-          <h2 class="fw-bold">Nerds</h2>
-        </router-link></b-navbar-brand
-      >
-
-      <b-navbar-toggle target="nav-collapse" class="bg-dark"></b-navbar-toggle>
-
-      <b-collapse id="nav-collapse" is-nav>
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ms-auto">
-          <router-link class="nav-link" to="/about">
-            <img src="./assets/icons/Laag 10.png" alt="" /><br />
-            <span class="text-dark">Beoordeling 4.9 / 5.0</span>
-          </router-link>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+    <ul class="nav">
+      <div class="container">
+        <div class="col-10 m-auto">
+          <div class="row">
+            <div class="col-md-6 d-flex justify-content-center">
+              <li class="nav-item logo">
+                <router-link
+                  class="nav-link text-dark d-flex justify-content-left align-items-center"
+                  aria-current="page"
+                  to="/"
+                >
+                  <h1>tado°</h1>
+                  <span class="logo__powered-text p-2">powered by</span>
+                  <img
+                    src="./assets/icons/logo.png"
+                    class="logo__image"
+                    alt=""
+                  />
+                </router-link>
+              </li>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+              <li class="nav-item navbar__right-col">
+                <router-link class="nav-link" to="/about">
+                  <img src="./assets/icons/Laag 10.png" alt="" /><br />
+                  <span class="text-dark">Beoordeling 4.9 / 5.0</span>
+                </router-link>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
 
     <router-view />
   </div>
@@ -40,26 +48,24 @@
   font-family: "Ferzeit";
 }
 
-.nav {
-  padding: 30px;
-  font-family: "Ferzeit";
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      // color: #42b983;
-      font-size: 30px;
-      color: #000000;
-      font-family: "Freizeit";
-    }
-  }
+.logo__powered-text {
+  font-size: 12px;
+}
+@media screen and (max-width: 512px) {
   .logo__powered-text {
-    font-size: 12px;
+    font-size: 10px;
   }
-  b-navbar {
-    font-family: "Ferzeit";
+  .navbar__right-col {
+    margin-top: -5%;
   }
+  .logo__image {
+    width: 100px;
+  }
+  .navbar__right-col {
+    margin-left: 0px;
+  }
+}
+.logo {
+  margin-left: 30px;
 }
 </style>
